@@ -57,7 +57,7 @@ CruiseBit.neoClear()
 MIT
 
 
-# 克鲁斯教育机器人microbit软件包
+# 奥松克鲁斯教育机器人microbit软件包
 
 软件包github地址为：https://github.com/alsrobot-microbit-makecode-packages/CruiseBit
 软件包修改维护人员：https://github.com/bobolx
