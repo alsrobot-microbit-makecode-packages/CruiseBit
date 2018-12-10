@@ -96,6 +96,14 @@ enum ColorList {
     //% block="黑"
     black = 1
 }
+enum PinList {
+    //% block="上"
+    up_pull = 1,
+    //% block="下"
+    down_pull = 2,
+    //% block="无"
+    no_pull = 3
+}
 
 //% weight=99 icon="\uf0e7" color=#1B80C4
 namespace CruiseBit {
@@ -389,6 +397,22 @@ namespace CruiseBit {
     export function neoRainbow(): void {
         neoStrip.showRainbow(1, 360);
     }
+
+     //% blockId=tape_rgb block="设置拉 引脚 %pin| 为 %way"
+    //% weight=49
+    export function setTapeLights(pin: DigitalPin, way: PinList): void {
+
+        if(way = PinList.up_pull){
+            pins.setPull(pin, PinPullMode.PullUp);
+        }else if(way = PinList.down_pull){
+            pins.setPull(pin, PinPullMode.PullDown);
+        }else{
+            pins.setPull(pin, PinPullMode.PullNone);
+        }
+
+        
+        
+}
 
 }
 
