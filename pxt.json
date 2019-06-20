@@ -8,8 +8,7 @@
     "icon": "icon.png",
     "license": "MIT",
     "files": [
-        "main.ts",
-		"_locales/zh/CruiseBit-strings.json"
+        "main.ts"
     ],
     "public": true
 }
