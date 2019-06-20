@@ -1,7 +1,7 @@
 # CruiseBit Package for Microsoft PXT
 
 The github address of the package is https://github.com/alsrobot-microbit-makecode-packages/CruiseBit
-The maintenance staff of the package is https://github.com/bobolx
+The maintenance staff of the package is https://github.com/lzl525898
 
 This software package is specially developed for Cruise educational robots. The Cruise robot has not been put into mass production, so it has not been put on the official website of ALSRobot. For details of its accessories, please visit:http://www.alsrobot.cn/goods-413.html
 
@@ -60,7 +60,7 @@ MIT
 # 奥松克鲁斯教育机器人microbit软件包
 
 软件包github地址为：https://github.com/alsrobot-microbit-makecode-packages/CruiseBit
-软件包修改维护人员：https://github.com/bobolx
+软件包修改维护人员：https://github.com/lzl525898
 
 该软件包专门为克鲁斯教育机器人开发，克鲁斯机器人还未投入批量生产，故未在奥松机器人官方商城上架，它的配件信息请访问：http://www.alsrobot.cn/goods-413.html
 

@@ -43,65 +43,65 @@ enum PingUnit {
 }
 
 enum IRList {
-    //% block="前方"
+    //% block="FRONT"
     front = 1,
-    //% block="左侧"
+    //% block="LEFT"
     right = 2,
-    //% block="右侧"
+    //% block="RIGHT"
     left = 3
 }
 
 enum RgbList {
-    //% block="全部"
+    //% block="ALL"
     rgb = 9,
-    //% block="灯1"
+    //% block="LED1"
     rgb1 = 0,
-    //% block="灯2"
+    //% block="LED2"
     rgb2 = 1,
-    //% block="灯3"
+    //% block="LED3"
     rgb3 = 2,
-    //% block="灯4"
+    //% block="LED4"
     rgb4 = 3,
-    //% block="灯5"
+    //% block="LED5"
     rgb5 = 4,
-    //% block="灯6"
+    //% block="LED6"
     rgb6 = 5,
-    //% block="灯7"
+    //% block="LED7"
     rgb7 = 6,
-    //% block="灯8"
+    //% block="LED8"
     rgb8 = 7,
-    //% block="灯9"
+    //% block="LED9"
     rgb9 = 8
 }
 
 enum ColorList {
-    //% block="红"
+    //% block="RED"
     red = 1,
-    //% block="橙"
+    //% block="ORANGE"
     orange = 2,
-    //% block="黄"
+    //% block="YELLOW"
     yellow = 3,
-    //% block="绿"
+    //% block="GREEN"
     green = 4,
-    //% block="蓝"
+    //% block="BLUE"
     blue = 5,
-    //% block="靛"
+    //% block="INDIGO"
     indigo = 6,
-    //% block="浅紫"
+    //% block="VIOLET"
     violet = 7,
-    //% block="深紫"
+    //% block="PURPLE"
     purple = 8,
-    //% block="白"
+    //% block="WHITE"
     white = 9,
-    //% block="黑"
+    //% block="BLOCK"
     black = 1
 }
 enum PinList {
-    //% block="上"
+    //% block="UP"
     up_pull = 1,
-    //% block="下"
+    //% block="DOWN"
     down_pull = 2,
-    //% block="无"
+    //% block="NONE"
     no_pull = 3
 }
 
@@ -113,7 +113,7 @@ namespace CruiseBit {
     /**
      * 设置电机
      */
-    //% blockId="cruise_motor" block="电机 左 速度%leftSpeed| 右 速度%rightSpeed| 时长%time 秒"
+	//% blockId="cruise_motor" block="Set DC Motor Left Speed%leftSpeed| Right Speed%rightSpeed| for%time"
     //% leftSpeed.min=-1023 leftSpeed.max=1023
     //% rightSpeed.min=-1023 rightSpeed.max=1023
     //% weight=100
@@ -159,7 +159,7 @@ namespace CruiseBit {
      * 播放音调
      */
     //% weight=89
-    //% blockId="cruise_tone" block="播放音调 %tone| ，节拍 %beatInfo"
+    //% blockId="cruise_tone" block="Play Tone %tone| for %beatInfo"
     export function myPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
 
         if(beatInfo == BeatList.whole_beat){
@@ -200,7 +200,7 @@ namespace CruiseBit {
     }
 
     //% weight=79
-    //% blockId="cruise_patrol" block="巡线传感器 %patrol"
+    //% blockId="cruise_patrol" block="Line Tracer Detects %patrol"
     export function readPatrol(patrol:Patrol): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P12);
@@ -235,7 +235,7 @@ namespace CruiseBit {
         }
     }
 
-    //% blockId=cruise_sensor block="超声波探测距离 %unit"
+    //% blockId=cruise_sensor block="Ultrasonic Distance %unit"
     //% weight=69
     export function sensorDistance(unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
@@ -281,7 +281,7 @@ namespace CruiseBit {
     /**
       * 红外线探测左、前、右是否有障碍物
       */
-    //% blockId="cruise_IR" block="%IRDire| 有障碍物"
+    //% blockId="cruise_IR" block="%IRDire| Obstacle"
     //% weight=68
     export function cruiseIR(IRDire:IRList): boolean {
         if(IRDire == IRList.front){
@@ -307,7 +307,7 @@ namespace CruiseBit {
         }
     }
 
-    //% blockId=cruise_rgb block="设置板载LED %RgbValue| 颜色为 %ColorValue"
+    //% blockId=cruise_rgb block="Set LED %RgbValue| Colour %ColorValue"
     //% weight=59
     export function setRGB(RgbValue: RgbList, ColorValue:ColorList): void {
         
@@ -399,7 +399,7 @@ namespace CruiseBit {
    /**
      * Clear leds.
      */
-   //% blockId="cruise_neo_clear" block="关闭所有LED灯"
+   //% blockId="cruise_neo_clear" block="Clear all"
    //% weight=55
    export function neoClear(): void {
        neoStrip.showColor(neopixel.colors(NeoPixelColors.Black));
@@ -408,13 +408,13 @@ namespace CruiseBit {
     /**
       * Shows a rainbow pattern on all LEDs.
       */
-    //% blockId="cruise_neo_rainbow" block="彩虹灯"
+    //% blockId="cruise_neo_rainbow" block="Show Rainbow"
     //% weight=56
     export function neoRainbow(): void {
         neoStrip.showRainbow(1, 360);
     }
 
-     //% blockId=tape_rgb block="设置拉 引脚 %pin| 为 %way"
+     //% blockId=tape_rgb block="Set Pull Pin %pin| to %way"
     //% weight=49
     export function setTapeLights(pin: DigitalPin, way: PinList): void {
 
