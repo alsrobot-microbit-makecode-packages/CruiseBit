@@ -7,5 +7,12 @@
 	"CruiseBit.setRGB|block": "设置板载LED %RgbValue| 颜色为 %ColorValue",
 	"CruiseBit.neoClear|block": "关闭所有LED灯",
 	"CruiseBit.neoRainbow|block": "彩虹灯",
-	"CruiseBit.setTapeLights|block": "设置拉 引脚 %pin| 为 %way"
+    "CruiseBit.neoRainbow2|block": "彩虹灯2",
+	"CruiseBit.setTapeLights|block": "设置拉 引脚 %pin| 为 %way",
+	"CruiseBit.COLOR_TYPE.BLACK|block": "黑",
+    "CruiseBit.COLOR_TYPE.BLUE|block": "蓝",
+    "CruiseBit.COLOR_TYPE.CYAN|block": "灰",
+    "CruiseBit.COLOR_TYPE.GREEN|block": "绿",
+    "CruiseBit.COLOR_TYPE.PURPLE|block": "紫",
+    "CruiseBit.COLOR_TYPE.RED|block": "红"
 }

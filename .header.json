@@ -1,0 +1,20 @@
+{
+    "target": "microbit",
+    "targetVersion": "2.1.16",
+    "name": "CruiseBit",
+    "meta": {},
+    "editor": "blocksprj",
+    "pubId": "",
+    "pubCurrent": false,
+    "_rev": null,
+    "id": "0b426da6-1ddc-4ceb-60a8-77baf08bb1e4",
+    "recentUse": 1571727968,
+    "modificationTime": 1571727968,
+    "blobId": null,
+    "blobVersion": null,
+    "blobCurrent": false,
+    "isDeleted": false,
+    "path": "CruiseBit-master",
+    "githubCurrent": false,
+    "saveId": null
+}
