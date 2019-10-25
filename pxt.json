@@ -8,7 +8,6 @@
     "icon": "icon.png",
     "license": "MIT",
     "files": [
-        "main.blocks",
         "main.ts",
         "extension.cpp",
         "shims.d.ts",
