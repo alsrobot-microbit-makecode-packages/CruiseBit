@@ -98,13 +98,13 @@ enum PinList {
     no_pull = 3
 }
 enum SENSORS {
-    //% block="MU00"
+    //% block="Cruise00"
     MU00,
-    //% block="MU01"
+    //% block="Cruise01"
     MU01,
-    //% block="MU10"
+    //% block="Cruise10"
     MU10,
-    //% block="MU11"
+    //% block="Cruise11"
     MU11
 }
 enum PORT {
@@ -648,11 +648,8 @@ namespace CruiseBit {
             pins.setPull(pin, PinPullMode.PullDown);
         }else{
             pins.setPull(pin, PinPullMode.PullNone);
-        }
-
-        
-        
-}
+        }        
+    }
     /**
     * Help goes here.
     */
