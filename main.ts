@@ -1,3 +1,23 @@
+enum btnList{
+    //% block="M-LEFT"
+    cleft = 8,
+    //% block="M-RIGHT"
+    cright = 16,
+    //% block="R-TOP"
+    rup = 12,
+    //% block="R-BOTTOM"
+    rdown = 14,
+    //% block="R-LEFT"
+    rleft = 13,
+    //% block="R-RIGHT"
+    rright = 15
+}
+enum eventList {
+    //% block="PRESSED"
+    pressed = 1,
+    //% block="RELEASED"
+    released = 0
+}
 enum ToneHzTable {
     do = 262,
     re = 294,
@@ -421,6 +441,41 @@ namespace CruiseBit {
         //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
 
         // }    
+    }
+	
+	/**
+     * 摇杆横轴
+     */
+    //% blockId="joy_x" block="Joystick X value"
+    //% weight=77
+    export function rockerX(): number {
+        return pins.analogReadPin(AnalogPin.P2);
+    }
+    /**
+     * 摇杆纵轴
+     */
+    //% blockId="joy_y" block="Joystick Y value"
+    //% weight=78
+    export function rockerY(): number {
+        return pins.analogReadPin(AnalogPin.P1); 
+    }
+    //% weight=76
+    //% blockId="btn_pressed" block="Button %btn|  %btnEvent"
+    export function btnPressed(btn:btnList, btnEvent:eventList): boolean {
+        if(btn == btnList.cleft){
+            return pins.digitalReadPin(DigitalPin.P8) == btnEvent;
+        }else if(btn == btnList.cright){
+            return pins.digitalReadPin(DigitalPin.P16) == btnEvent;
+        }else if(btn == btnList.rup){
+            return pins.digitalReadPin(DigitalPin.P12) == btnEvent;
+        }else if(btn == btnList.rdown){
+            return pins.digitalReadPin(DigitalPin.P14) == btnEvent;
+        }else if(btn == btnList.rleft){
+            return pins.digitalReadPin(DigitalPin.P13) == btnEvent;
+        }else{
+            return pins.digitalReadPin(DigitalPin.P15) == btnEvent;
+        }
+        
     }
 
     //% weight=79

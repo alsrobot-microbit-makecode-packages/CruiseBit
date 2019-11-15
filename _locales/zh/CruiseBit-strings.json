@@ -1,6 +1,9 @@
 {
   "CruiseBit.motorRun|block": "电机 左 速度%leftSpeed| 右 速度%rightSpeed| 时长%time 秒",
   "CruiseBit.myPlayTone|block": "播放音调 %tone| ，节拍 %beatInfo",
+  "CruiseBit.rockerX|block": "摇杆X轴的值",
+  "CruiseBit.rockerY|block": "摇杆Y轴的值",
+  "CruiseBit.btnPressed|block": "按钮 %btn| %btnEvent",
   "CruiseBit.readPatrol|block": "巡线传感器 %patrol",
   "CruiseBit.sensorDistance|block": "超声波探测距离 %unit",
   "CruiseBit.cruiseIR|block": "%IRDire| 有障碍物",
