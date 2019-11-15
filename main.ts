@@ -774,20 +774,20 @@ namespace CruiseBit {
         return true
     }
 }
-CruiseBit.begin(SENSORS.MU00, PORT.I2C)
-CruiseBit.VisionBegin(SENSORS.MU00, ENABLES.enable, VISION_TYPE.VISION_NUM_CARD_DETECT)
-basic.forever(function () {
-    if (CruiseBit.detected(SENSORS.MU00, VISION_TYPE.VISION_NUM_CARD_DETECT)) {
-        basic.showIcon(IconNames.Heart)
-    }
-})
-basic.forever(function () {
-    if (CruiseBit.get_number_card_type(SENSORS.MU00, NUM_CARD_TYPE.NUM_CARD_1)) {
-        basic.showIcon(IconNames.Sword)
-    }
-    if (CruiseBit.get_number_card_type(SENSORS.MU00, NUM_CARD_TYPE.NUM_CARD_7)) {
-        basic.showIcon(IconNames.Meh)
-    } else {
-        basic.showIcon(IconNames.Square)
-    }
-})
+//CruiseBit.begin(SENSORS.MU00, PORT.I2C)
+//CruiseBit.VisionBegin(SENSORS.MU00, ENABLES.enable, VISION_TYPE.VISION_NUM_CARD_DETECT)
+//basic.forever(function () {
+//    if (CruiseBit.detected(SENSORS.MU00, VISION_TYPE.VISION_NUM_CARD_DETECT)) {
+//        basic.showIcon(IconNames.Heart)
+//    }
+//})
+//basic.forever(function () {
+//    if (CruiseBit.get_number_card_type(SENSORS.MU00, NUM_CARD_TYPE.NUM_CARD_1)) {
+//        basic.showIcon(IconNames.Sword)
+//    }
+//    if (CruiseBit.get_number_card_type(SENSORS.MU00, NUM_CARD_TYPE.NUM_CARD_7)) {
+//        basic.showIcon(IconNames.Meh)
+//    } else {
+//        basic.showIcon(IconNames.Square)
+//    }
+//})

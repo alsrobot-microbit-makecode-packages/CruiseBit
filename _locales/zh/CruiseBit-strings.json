@@ -129,8 +129,8 @@
   "CruiseBit.set_led|block": "%id|LED %led|识别到颜色 %detected_color|未识别到颜色 %undetected_color",
   "CruiseBit.set_level|block": "%id|设置算法%VISION_TYPE|性能%level",
   "CruiseBit.set_zoom|block": "%id|数码变焦%level",
-  "CruiseBit|block": "Cruise视觉传感器",
-  "{id:category}CruiseBit": "Cruise视觉传感器",
+  "CruiseBit|block": "Cruise",
+  "{id:category}CruiseBit": "CruiseBit",
   "{id:group}Settings": "设置模块",
   "{id:group}Functions": "运行模块"
 }
