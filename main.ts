@@ -89,7 +89,7 @@ enum RgbList {
 }
 enum ColorList {
     //% block="RED"
-    red = 1,
+    red = -1,
     //% block="ORANGE"
     orange = 2,
     //% block="YELLOW"
@@ -371,7 +371,7 @@ namespace CruiseBit {
         if(rightSpeed < 0){
             rightRotation = 0;
         }
-        
+
        //左电机 M1
         pins.analogWritePin(AnalogPin.P14, Math.abs(leftSpeed));
         pins.digitalWritePin(DigitalPin.P13, leftRotation);
@@ -384,7 +384,7 @@ namespace CruiseBit {
         if(time < 0){
             time = 0;
         }
-        
+
         let time_num = time*1000000;
 
         control.waitMicros(time_num);
@@ -395,8 +395,8 @@ namespace CruiseBit {
         //右电机 M2
         pins.analogWritePin(AnalogPin.P16, 0);
         pins.digitalWritePin(DigitalPin.P15, 0);
-        
-        
+
+
     }
 
     /**
@@ -410,12 +410,12 @@ namespace CruiseBit {
             music.playTone(tone, music.beat(BeatFraction.Whole));
 
         }
-       
+
         if(beatInfo == BeatList.half_beat){
             music.playTone(tone, music.beat(BeatFraction.Half));
 
         }
-        
+
         if(beatInfo == BeatList.quarter_beat){
             music.playTone(tone, music.beat(BeatFraction.Quarter));
 
@@ -426,7 +426,7 @@ namespace CruiseBit {
 
         }
 
-        
+
         if(beatInfo == BeatList.eighth_beat){
             music.playTone(tone, music.beat(BeatFraction.Eighth));
 
@@ -440,9 +440,9 @@ namespace CruiseBit {
         // if(beatInfo == BeatList.sixteen_beat){
         //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
 
-        // }    
+        // }
     }
-	
+
 	/**
      * 摇杆横轴
      */
@@ -457,7 +457,7 @@ namespace CruiseBit {
     //% blockId="joy_y" block="Joystick Y value"
     //% weight=78
     export function rockerY(): number {
-        return pins.analogReadPin(AnalogPin.P1); 
+        return pins.analogReadPin(AnalogPin.P1);
     }
     //% weight=76
     //% blockId="btn_pressed" block="Button %btn|  %btnEvent"
@@ -475,7 +475,7 @@ namespace CruiseBit {
         }else{
             return pins.digitalReadPin(DigitalPin.P15) == btnEvent;
         }
-        
+
     }
 
     //% weight=79
@@ -527,11 +527,11 @@ namespace CruiseBit {
         //pins.digitalWritePin(DigitalPin.P2, 1);
         //control.waitMicros(10);
         //pins.digitalWritePin(DigitalPin.P2, 0);
-        
+
         // read pulse
         //let d = pins.pulseIn(DigitalPin.P5, PulseValue.High, maxCmDistance * 58);
         //console.log("Distance: " + d/58);
-        
+
         //basic.pause(50)
 
         //switch (unit) {
@@ -546,10 +546,10 @@ namespace CruiseBit {
          pins.digitalWritePin(DigitalPin.P2, 1);
          control.waitMicros(10);
          pins.digitalWritePin(DigitalPin.P2, 0);
- 
+
          // read pulse
          const d = pins.pulseIn(DigitalPin.P2, PulseValue.High, maxCmDistance * 58);
- 
+
          switch (unit) {
              case PingUnit.Centimeters: return Math.idiv(d, 58);
              default: return d ;
@@ -589,16 +589,16 @@ namespace CruiseBit {
     //% blockId=cruise_rgb block="Set LED %RgbValue| Colour %ColorValue"
     //% weight=59
     export function setRGB(RgbValue: RgbList, ColorValue:ColorList): void {
-        
+
         if(ColorValue == ColorList.red){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Red));
             }else{
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Red));
             }
-            
+
         }
-        
+
         if(ColorValue == ColorList.orange){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Orange));
@@ -606,7 +606,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Orange));
             }
         }
-        
+
         if(ColorValue == ColorList.yellow){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Yellow));
@@ -614,7 +614,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Yellow));
             }
         }
-        
+
         if(ColorValue == ColorList.green){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Green));
@@ -622,7 +622,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Green));
             }
         }
-        
+
         if(ColorValue == ColorList.blue){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Blue));
@@ -630,7 +630,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Blue));
             }
         }
-        
+
         if(ColorValue == ColorList.indigo){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Indigo));
@@ -638,7 +638,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Indigo));
             }
         }
-        
+
         if(ColorValue == ColorList.violet){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Violet));
@@ -646,7 +646,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Violet));
             }
         }
-        
+
         if(ColorValue == ColorList.purple){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Purple));
@@ -654,7 +654,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.Purple));
             }
         }
-        
+
         if(ColorValue == ColorList.white){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.White));
@@ -662,7 +662,7 @@ namespace CruiseBit {
                 neoStrip.setPixelColor(RgbValue, neopixel.colors(NeoPixelColors.White));
             }
         }
-        
+
         if(ColorValue == ColorList.black){
             if(RgbValue == RgbList.rgb){
                 neoStrip.showColor(neopixel.colors(NeoPixelColors.Black));
@@ -672,7 +672,7 @@ namespace CruiseBit {
         }
 
         neoStrip.show();
-        
+
     }
 
    /**
@@ -703,13 +703,13 @@ namespace CruiseBit {
             pins.setPull(pin, PinPullMode.PullDown);
         }else{
             pins.setPull(pin, PinPullMode.PullNone);
-        }        
+        }
     }
     /**
     * Help goes here.
     */
     //% blockId=mu_init block="Init%id|Interface%port"
-    //% weight=100 
+    //% weight=100
     //% shim=muvs::begin
     //% group="Settings"
     export function begin(id: SENSORS, port: PORT) {
